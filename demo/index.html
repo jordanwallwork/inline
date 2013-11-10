@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <script src="../lib/inline.js"></script>
+    <script>
+      var add = function(a,b) { return a + b; }
+        .where(1,2).shouldEqual(3) // pass
+        .where(2,4).shouldEqual(5); // fail
+        
+      (function subtract(a,b) { return a - b; })
+        .where(2,1).shouldEqual(0); // fail
+    </script>
+  </head>
+  <body>
+    <h1>Inline.js - Inline Testing in Javascript</h1>
+    
+    <p>Inline.js allows you to append unit tests onto function declarations inline in code, such as:</p>
+    <pre>var square = function(n) { return n * n; }.where(3).shouldEqual(9);</pre>
+    
+    <p>It was inspired by the article <a href="http://sergimansilla.com/blog/extending-js-inline-unit-tests/">Extending JavaScript with inline unit tests</a> by Sergi Mansilla, which uses macros to achieve a similar result.</p>
+    
+    <p>View the source of this page to see a couple of simple functions tested, and check out the console to see the results of the failed assertions.</p>
+    
+    <p>Inline.js is only a quick experiment, and I wouldn’t really recommend mixing tests and code, but I do think there’s something interesting about inline testing, and could see it being used for teaching or demonstration purposes. Check out the source <a href="https://github.com/jordanwallwork/inline">on github</a> or <a href="http://jordanwallwork.co.uk/2013/11/inline-js-inline-testing-with-javascript/">read more</a>.</p>
+  </body>
+</html>
